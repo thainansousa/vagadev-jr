@@ -1,0 +1,22 @@
+.container{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    z-index: 999;
+
+    .logo img:last-child{
+        margin-left: 2rem;
+    }
+    .menu_icons img{
+        margin-right: 1.2rem;
+    }
+    .menu_icons img:last-child{
+        margin-right: 0;
+    }
+}
