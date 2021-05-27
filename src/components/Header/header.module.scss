@@ -13,17 +13,70 @@
         display: flex;
         align-items: center;
     }
+    .logo img:first-child{
+        width: 1.8rem;
+        cursor: pointer;
+    }
     .logo img:last-child{
         margin-left: 1rem;
         margin-right: 1rem;
     }
-    .menu_icons img:first-child{
-        margin-right: 0.8rem;
+    .menu_icons{
+        display: flex;
+        align-items: center;
+        span{
+            display: none;
+        }
+        img{
+            margin-right: 0.8rem;
+        }
+        img:first-child{
+            margin-right: 0.5rem;
+        }
+        div{
+            display: flex;
+            align-items: center;
+            position: relative;
+            img:first-child{
+                margin-right: 0;
+            }
+            span{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 1.4rem;
+                height: 1.4rem;
+                font-size: 1.2rem;
+                border-radius: 50%;
+                background-color: var(--ligth-blue);
+                color: var(--white);
+            }
+        }
     }
-    .menu_icons img{
-        margin-right: 1.2rem;
-    }
-    .menu_icons img:last-child{
-        margin-right: 0;
+}
+
+@media screen and (min-width: 1024px){
+    .container{
+        max-width: 80%;
+        margin: 0 auto;
+        .menu_icons{
+            span{
+                display: inline-block;
+                color: var(--white);
+                font-size: 1.4rem;
+                margin: 0 0.5rem;
+            }
+            img{
+                margin-right: 0;
+            }
+            img:first-child{
+                margin-right: 0;
+            }
+            div{
+                span{
+                    margin: 0;
+                }
+            }
+        }
     }
 }
