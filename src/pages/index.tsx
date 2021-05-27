@@ -69,7 +69,11 @@ export default function Home() {
       </div>
       <div className={styles.navegation_container}>
         <div className={styles.game}>
-          <span>Mortal Kombat</span>
+          {banner === 1 ? (
+            <span>Mortal Kombat</span>
+          ) : (
+            <span>Red Dead Redemption 2</span>
+          )}
         </div>
         <div className={styles.navegation}>
           <div>

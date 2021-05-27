@@ -4,11 +4,14 @@
     top: 0;
     left: 0;
     right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
     z-index: 999;
+    .menu_itens{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+    }
     .logo{
         display: flex;
         align-items: center;
@@ -24,32 +27,78 @@
     .menu_icons{
         display: flex;
         align-items: center;
+        a{
+           display: none;
+        }
         span{
             display: none;
         }
-        img{
-            margin-right: 0.8rem;
+        div{
+            display: flex;
+            align-items: center;
+            span{
+                display: none;
+            }
         }
-        img:first-child{
+        div:first-child img{
+            margin-right: 0.3rem;
+        }
+        div:nth-child(3) img{
             margin-right: 0.5rem;
         }
-        div{
+        div.bag{
             display: flex;
             align-items: center;
             position: relative;
             img:first-child{
                 margin-right: 0;
             }
-            span{
+            a{
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 width: 1.4rem;
                 height: 1.4rem;
-                font-size: 1.2rem;
+                font-size: 1rem;
+                font-weight: bold;
                 border-radius: 50%;
                 background-color: var(--ligth-blue);
                 color: var(--white);
+            }
+        }
+    }
+    .menu_mobile{
+        background-color: var(--dark-blue);
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        div{
+            width: 75%;
+            margin: 0rem auto;
+            padding-top: 4rem;
+            h2{
+                color: var(--white);
+                margin-top: 0.5rem;
+                font-size: 1.4rem;
+            }
+            ul li{
+                list-style: none;
+                margin: 0.5rem 0;
+            }
+            ul li a{
+                display: inline-block;
+                padding: 0.25rem;
+                border-radius: 0.25rem;
+                width: 100%;
+                color: var(--white);
+            }
+            ul li a.selected{
+                background-color: var(--ligth-blue);
+            }
+            hr{
+                border: 1px solid rgba($color: #000000, $alpha: 0.5);
             }
         }
     }
@@ -57,25 +106,29 @@
 
 @media screen and (min-width: 1024px){
     .container{
-        max-width: 80%;
+        max-width: 70%;
         margin: 0 auto;
         .menu_icons{
-            span{
-                display: inline-block;
+            div{
+                a{
+                display: block;
                 color: var(--white);
                 font-size: 1.4rem;
-                margin: 0 0.5rem;
+                margin-right: 2rem;
+                margin-left: 0.5rem;
+            }
+            }
+            span.rule{
+                display: inline-block;
+                color: #fff;
+                font-size: 1.8rem;
+                margin-right: 4rem;
             }
             img{
                 margin-right: 0;
             }
             img:first-child{
                 margin-right: 0;
-            }
-            div{
-                span{
-                    margin: 0;
-                }
             }
         }
     }
