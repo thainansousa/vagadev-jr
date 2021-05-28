@@ -85,6 +85,7 @@ export default function Header(props) {
                         </div>
                         <div className={styles.menu_desktop}>
                             <div>
+                                <img src="/svgs/play.svg" alt="" />
                                 <div>
                                     <div>
                                         <h2>Luta</h2>

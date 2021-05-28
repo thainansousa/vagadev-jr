@@ -3,7 +3,7 @@
 :root{
   --white: #fff;
 
-  --background: #F7F8FA;
+  --background: ##fefefe;
 
   --dark-blue: #084154;
   --ligth-blue: #3EC6E0;
@@ -22,7 +22,7 @@ body {
  height: 100%;
 }
 body{
-  background-color:#fefefe;
+  background-color:var(--background);
   font-family: 'Roboto', sans-serif;
 }
 a {

@@ -121,9 +121,17 @@
             margin: 1.5rem auto;
             .spotlight{
                 margin-top: 1.5rem;
-                h2{
-                    font-weight: 400;
-                    font-size: 1.2rem;
+                div:first-child{
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    img.icon{
+                        width: 1.6rem;
+                    }
+                    h2{
+                        font-weight: 400;
+                        font-size: 1.4rem;
+                    }
                 }
                 .spotlight_banner{
                     div:first-child{
@@ -289,12 +297,17 @@
         .spotlight_banner_container{
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 4rem;
         }
         .spotlight_banner{
-            width: 25%;
             div:first-child{
                 width: auto;
+            }
+            .spotlight_banner_info{
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
             }
         }
     }

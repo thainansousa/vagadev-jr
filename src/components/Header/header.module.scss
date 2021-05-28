@@ -148,15 +148,25 @@
         .menu_desktop{
             display: block;
             background-color: var(--dark-blue);
-            width: 80%;
+            width: 55%;
             position: absolute;
             top: 4;
             z-index: -1;
             padding: 1%;
+            border: 1px solid var(--ligth-blue);
+            box-shadow: 8px 8px 1px rgba($color: #3EC6E0, $alpha: 1);
+            border-radius: 0.25rem;
             div{
                 display: flex;
                 width: 100%;
                 margin: 0rem auto;
+                img{
+                    position: absolute;
+                    top: -1.2rem;
+                    left: 1.2rem;
+                    transform: rotate(-90deg);
+                    width: 1.4rem;
+                }
                 div{
                     display: flex;
                     flex-direction: column;

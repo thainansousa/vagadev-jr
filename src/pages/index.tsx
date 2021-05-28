@@ -150,6 +150,7 @@ export default function Home() {
       <section className={styles.spotlight_container}>
         <div className={styles.spotlight}>
           <div>
+            <img className={styles.icon} src="/svgs/grid.svg" alt="" />
             <h2>Produtos em destaque</h2>
           </div>
           <div className={styles.spotlight_banner_container}>
