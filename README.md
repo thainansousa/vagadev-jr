@@ -1,4 +1,4 @@
-## N1 RUSSJ PROJECT - AGÊNCIA N1
+## N1 RUSH PROJECT - AGÊNCIA N1
 
 **Projeto desenvolvido para concorrer a vaga de desenvolvedor junior.**
 
