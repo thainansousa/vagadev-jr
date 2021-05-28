@@ -2,17 +2,19 @@ import styles from './home.module.scss'
 
 import Header from "../components/Header";
 import Footer from '../components/Footer';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { BagContext } from '../Context/BagContext';
 
 export default function Home() {
 
+  const { hasFineshed, closeModal } = useContext(BagContext)
+
   const [cart, setCart] = useState(0)
   const [banner, setBanner] = useState(1)
+  const [outriders, setOutriders] = useState(false)
+  const [cyberpunk, setCyberPunk] = useState(false)
+  const [honkeyKong, setHonkeyKong] = useState(false)
 
-
-  function buy() {
-    setCart(cart + 1)
-  }
   function back() {
     if (banner === 2) {
       setBanner(1)
@@ -21,6 +23,33 @@ export default function Home() {
   function next() {
     if (banner === 1) {
       setBanner(2)
+    }
+  }
+  function productOne() {
+    if (outriders) {
+      setOutriders(false)
+      setCart(cart - 1)
+    } else {
+      setOutriders(true)
+      setCart(cart + 1)
+    }
+  }
+  function productTwo() {
+    if (cyberpunk) {
+      setCyberPunk(false)
+      setCart(cart - 1)
+    } else {
+      setCyberPunk(true)
+      setCart(cart + 1)
+    }
+  }
+  function productThree() {
+    if (honkeyKong) {
+      setHonkeyKong(false)
+      setCart(cart - 1)
+    } else {
+      setHonkeyKong(true)
+      setCart(cart + 1)
     }
   }
   return (
@@ -111,39 +140,80 @@ export default function Home() {
                 <div className={styles.spotlight_banner_info}>
                   <span>Outriders</span>
                   <span>R$ 200,00</span>
-                  <div>
-                    <button onClick={buy}>Comprar</button>
-                  </div>
+                  {!outriders ? (
+                    <div>
+                      <button onClick={productOne}>Comprar</button>
+                    </div>
+                  ) : (
+                    <div>
+                      <button className={styles.purchased} onClick={productOne}>
+                        Comprado!
+                      <img src="/svgs/mario.png" alt="" />
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
             <div className={styles.spotlight_banner}>
               <div>
-                <img src="/img/outriders.jpeg" alt="" />
+                <img src="/img/cyberpunk.jpg" alt="" />
                 <div className={styles.spotlight_banner_info}>
-                  <span>Outriders</span>
+                  <span>CyberPunk 2077</span>
                   <span>R$ 200,00</span>
-                  <div>
-                    <button onClick={buy}>Comprar</button>
-                  </div>
+                  {!cyberpunk ? (
+                    <div>
+                      <button onClick={productTwo}>Comprar</button>
+                    </div>
+                  ) : (
+                    <div>
+                      <button className={styles.purchased} onClick={productTwo}>
+                        Comprado!
+                      <img src="/svgs/mario.png" alt="" />
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
             <div className={styles.spotlight_banner}>
               <div>
-                <img src="/img/outriders.jpeg" alt="" />
+                <img src="/img/donkeykong.png" alt="" />
                 <div className={styles.spotlight_banner_info}>
-                  <span>Outriders</span>
+                  <span>Donkey Kong Country Tropical Freeze</span>
                   <span>R$ 200,00</span>
-                  <div>
-                    <button onClick={buy}>Comprar</button>
-                  </div>
+                  {!honkeyKong ? (
+                    <div>
+                      <button onClick={productThree}>Comprar</button>
+                    </div>
+                  ) : (
+                    <div>
+                      <button className={styles.purchased} onClick={productThree}>
+                        Comprado!
+                      <img src="/svgs/mario.png" alt="" />
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+      {hasFineshed &&
+        <div className={styles.modal_Container}>
+          <div className={styles.modal}>
+            <div>
+              <img src="/svgs/close_btn.svg" alt="" onClick={closeModal} />
+            </div>
+            <div>
+              <h2>Pedido realizado com sucesso!</h2>
+              <img src="/svgs/mario.png" alt="" />
+            </div>
+          </div>
+        </div>
+      }
+
       <Footer />
     </div >
   )
