@@ -2,6 +2,7 @@ import styles from './home.module.scss'
 
 import Header from "../components/Header";
 import Footer from '../components/Footer';
+
 import { useContext, useState } from 'react';
 import { BagContext } from '../Context/BagContext';
 
@@ -10,7 +11,11 @@ export default function Home() {
   const { hasFineshed, closeModal } = useContext(BagContext)
 
   const [cart, setCart] = useState(0)
+
+  // Melhorar usando um plugin de carrousel
   const [banner, setBanner] = useState(1)
+
+  // Melhorar essa parte trazendo um array de objetos e usando um map para percorrer. 
   const [outriders, setOutriders] = useState(false)
   const [cyberpunk, setCyberPunk] = useState(false)
   const [honkeyKong, setHonkeyKong] = useState(false)
@@ -20,11 +25,14 @@ export default function Home() {
       setBanner(1)
     }
   }
+
   function next() {
     if (banner === 1) {
       setBanner(2)
     }
   }
+
+  // Melhorar crinad uma lógica para que os produtos sejam adicionados e verificados por id via index do map.
   function productOne() {
     if (outriders) {
       setOutriders(false)
@@ -34,6 +42,7 @@ export default function Home() {
       setCart(cart + 1)
     }
   }
+
   function productTwo() {
     if (cyberpunk) {
       setCyberPunk(false)
@@ -43,6 +52,7 @@ export default function Home() {
       setCart(cart + 1)
     }
   }
+
   function productThree() {
     if (honkeyKong) {
       setHonkeyKong(false)
@@ -56,6 +66,9 @@ export default function Home() {
     <div className={styles.container}>
       <Header item={cart} />
       <div className={styles.banner_container}>
+
+        {/* Usar um map para puxar de um array de objetos banners cadastrados em um bd e  trocar essa lógica
+        pela a de um carrousel */}
         {banner == 1 ? (
           <div>
             <img src="/img/principal_banner_desktop.jpg" alt="banner 01" className={styles.banner_desktop} />
@@ -96,6 +109,8 @@ export default function Home() {
           </div>
         )}
       </div>
+
+      {/* Melhorar fazendo este nav flutuar a direita do  banner e usar um carrousel para melhorar a lógica  */}
       <div className={styles.navegation_container}>
         <div className={styles.game}>
           {banner === 1 ? (
@@ -114,6 +129,8 @@ export default function Home() {
           <img src="/svgs/angle-right-solid.svg" alt="next" onClick={next} />
         </div>
       </div>
+
+      {/* Melhorar a quantidade de classes excessivas e tornar mais inxuto */}
       <section className={styles.games_container}>
         <div className={styles.middle_banner}>
           <img src="/img/zelda_banner.jpg" alt="" />
@@ -128,6 +145,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Usar um slider e mudar a lógica implementada */}
       <section className={styles.spotlight_container}>
         <div className={styles.spotlight}>
           <div>
@@ -140,6 +159,9 @@ export default function Home() {
                 <div className={styles.spotlight_banner_info}>
                   <span>Outriders</span>
                   <span>R$ 200,00</span>
+
+                  {/* Transformas esse botões em um componente para evitar seu uso repetido e reaproveitar,
+                  criando também um contexto para ser usado as funções. */}
                   {!outriders ? (
                     <div>
                       <button onClick={productOne}>Comprar</button>
@@ -155,6 +177,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
             <div className={styles.spotlight_banner}>
               <div>
                 <img src="/img/cyberpunk.jpg" alt="" />
@@ -176,6 +199,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
             <div className={styles.spotlight_banner}>
               <div>
                 <img src="/img/donkeykong.png" alt="" />
@@ -197,9 +221,12 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
+
+      {/* Corrigir os positions absolutes e verificar porque vh não que ocupar tela */}
       {hasFineshed &&
         <div className={styles.modal_Container}>
           <div className={styles.modal}>

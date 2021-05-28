@@ -1,8 +1,11 @@
-import { useContext, useState } from 'react'
-import { BagContext } from '../../Context/BagContext'
 import styles from './header.module.scss'
 
+import { useContext, useState } from 'react'
+import { BagContext } from '../../Context/BagContext'
+
 export default function Header(props) {
+
+    // Construir tipagens de algumas propriedades 
 
     const { bagFineshed } = useContext(BagContext)
 
@@ -11,6 +14,7 @@ export default function Header(props) {
     function openMenu() {
         setMenuMobile(true)
     }
+
     function closeMenu() {
         setMenuMobile(false)
     }
@@ -44,6 +48,8 @@ export default function Header(props) {
                         </div>
                     </div>
                 </div>
+
+                {/* Verificar porque menu não que pegar o vh todo da página  */}
                 {menuMobile &&
                     <>
                         <div className={styles.menu_mobile}>
