@@ -1,6 +1,6 @@
 ## N1 RUSSJ PROJECT - AGÊNCIA N1
 
-**Projeto desenvolvido para concorrer a vaga de desenvolvedor junior**
+**Projeto desenvolvido para concorrer a vaga de desenvolvedor junior.**
 
 *Foram usadas as tecnologias Javascript, NextJS, Sass.*
 
@@ -8,4 +8,4 @@
 
 <https://vagadev-jr.vercel.app/>
 
-# ATENÇÃO: APÓS FINALIZADO O PROCESSO SELETIVO, IREI RETIRAR DO AR O SITE. ENTÃO, ENQUANTO ISSO NÃO PRECISAM SE PREOCUPAR 😁😁😁
+## ATENÇÃO: APÓS FINALIZADO O PROCESSO SELETIVO, IREI RETIRAR DO AR O SITE. ENTÃO, ENQUANTO ISSO NÃO PRECISAM SE PREOCUPAR 😁😁😁
